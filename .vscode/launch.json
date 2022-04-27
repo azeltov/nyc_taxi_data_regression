@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Prep Data",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["--raw_data", "{workspaceeFolder}", "--labels-output", "/home/vscode/data/safedriver/output/labels", "--features-output", "/home/vscode/data/safedriver/output/features", "--label-column", "target", "id"],
+            "justMyCode": true
+        },
+        {
+            "name": "Train",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["--feature-data", "/home/vscode/data/safedriver/output/features", "--label-data", "/home/vscode/data/safedriver/output/labels", "--output-folder", "/home/vscode/data/safedriver/output/train"],
+            "justMyCode": true
+        },
+        {
+            "name": "Evaluate",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [ "--model-metadata", "/home/vscode/data/safedriver/output/train", "--recommendation-folder", "/home/vscode/data/safedriver/output/recommendation","--validation-data-path","/home/vscode/data/safedriver/input"],
+            "justMyCode": true
+        },        
+    ]
+}
