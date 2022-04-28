@@ -5,7 +5,8 @@ type: pipeline
 inputs:
   pipeline_job_input: #using local data, will crate an anonymous data asset
     type: uri_folder
-    path: ./data
+    path: azureml:nyc_taxi_raw:1
+    #path: ./data
 
 outputs: 
   pipeline_job_prepped_data:
@@ -27,6 +28,7 @@ settings:
   default_datastore: azureml:workspaceblobstore
   default_compute: azureml:cpu-cluster
   continue_on_step_failure: false
+
 
 jobs:
   prep-job:

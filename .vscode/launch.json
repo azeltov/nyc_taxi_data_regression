@@ -9,9 +9,9 @@
             "name": "Prep Data",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceFolder}/prep_src/prep.py",
             "console": "integratedTerminal",
-            "args": ["--raw_data", "{workspaceeFolder}", "--labels-output", "/home/vscode/data/safedriver/output/labels", "--features-output", "/home/vscode/data/safedriver/output/features", "--label-column", "target", "id"],
+            "args": ["--raw_data", "${workspaceFolder}/data", "--prep_data", "${workspaceFolder}/output/prep"],
             "justMyCode": true
         },
         {

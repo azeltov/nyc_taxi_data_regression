@@ -1,6 +1,5 @@
 import argparse
 from pathlib import Path
-from typing_extensions import Concatenate
 from uuid import uuid4
 from datetime import datetime
 import os
@@ -15,12 +14,16 @@ parser.add_argument("--prep_data", type=str, help="Path of prepped data")
 
 args = parser.parse_args()
 
-print("hello training world...")
+print("hello training world alex...")
 
 lines = [
     f"Raw data path: {args.raw_data}",
     f"Data output path: {args.prep_data}",
 ]
+
+# Create output folder
+prep_data_folder=Path(args.prep_data)
+prep_data_folder.mkdir(parents=True, exist_ok=True)
 
 for line in lines:
     print(line)

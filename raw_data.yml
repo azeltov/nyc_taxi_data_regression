@@ -1,0 +1,6 @@
+$schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
+name: nyc_taxi_raw
+description: NYC Taxi Dataset raw data.
+type: uri_folder
+path: data
+#path: azureml://datastores/trainingdata/nyc_taxi/

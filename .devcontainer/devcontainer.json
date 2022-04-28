@@ -1,0 +1,25 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/python-3-miniconda
+{
+    "name": "Azure Machine Learning - Miniconda 3",
+    "build": {
+        "context": "..",
+        "dockerfile": "Dockerfile",
+    },
+    "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-ai",
+    ],
+    "features": {
+        "azure-cli": "latest"
+    },
+    "remoteUser": "vscode",
+    "mounts": ["source=${localEnv:HOME}/cloudfiles/data/dataset/safedriver_input,target=/home/vscode/data/safedriver/input,type=bind,readonly=true,consistency=cached",
+        "source=${localEnv:HOME}/cloudfiles/code/Users/alzeltov/safe-driver-output,target=/home/vscode/data/safedriver/output,type=bind,readonly=false,consistency=cached"],
+    "onCreateCommand": "az extension add -n ml -y"
+}
